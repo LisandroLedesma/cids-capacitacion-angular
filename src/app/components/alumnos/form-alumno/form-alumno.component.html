@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="offset-10">
+    <button type="button" class="btn btn-primary mx-2" 
+    routerLink="/alumnos">
+        Volver 
+    </button>
+    </div>
+</div>
+
+<div class="row">
+<div class="mx-1 my-3 card bg-dark text-white col-md-5">
+    <div class="card-header" text-primary>{{ titulo }}</div>
+    <div class="card-body">
+
+        <div class="container">
+            <form [formGroup]="form" (ngSubmit)="guardar()">
+
+                <div class="form-group col-md-8">
+                    <label for="nombreAlumno">Nombre:</label>
+                    <input type="text" class="form-control" id="nombreAlumno" formControlName="Nombre">
+                </div>
+
+                <div class="form-group col-md-8">
+                    <label for="apellidoAlumno">Apellido:</label>
+                    <input type="text" class="form-control" id="apellidoAlumno" formControlName="Apellido">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="edadAlumno">Edad:</label>
+                    <input type="number" class="form-control" id="edadAlumno" formControlName="Edad">
+                </div>
+                
+                <div class="form-group col-md-8">
+                    <label for="cuilAlumno">CUIL:</label>
+                    <input type="text" class="form-control" id="cuilAlumno" formControlName="Cuil">
+                </div>
+
+                <div class="form-group col-md-8">
+                    <label for="reparticion">Reparticion:</label>
+                    <select type="text" class="form-control" id="reparticion" formControlName="Reparticion">
+                    <option *ngFor="let r of reparticiones" [value]="r.idReparticion">
+                        {{r.nombre}}
+                    </option>
+                </select>
+                </div>
+
+                <br>
+
+                <button *ngIf="!alumno else elseBlock" type="submit" class="btn btn-success mx-2"> Crear </button>
+                <ng-template #elseBlock>
+                    <button class="btn btn-primary" type="button" (click)="abrirModalEditar()"> Confirmar </button>
+                    <button type="button" class="btn btn-outline-danger mx-2"
+                (click)="abrirModalEliminar()"> 
+                    Eliminar
+                </button>
+                </ng-template>
+
+                
+                
+                <button type="button" class="btn btn-danger mx-2"
+                routerLink="/alumnos"> 
+                    Cancelar 
+                </button>
+                
+            </form>
+        </div>
+    </div>
+</div>
+<div class="mx-1 my-3 col-md-6">
+    <img class="imagen-alumno" src="../../../../assets/alumno1.jpg" alt="">
+</div>
+</div>
+<ngx-spinner></ngx-spinner>

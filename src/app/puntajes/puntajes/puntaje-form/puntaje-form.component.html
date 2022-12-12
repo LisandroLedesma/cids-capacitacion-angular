@@ -1,0 +1,255 @@
+<div class="row">
+    <div class="offset-11">
+        <button type="button" class="btn btn-primary mx-2" 
+        routerLink="/puntajes">
+            Volver 
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="mx-1 my-3 card bg-dark text-white col-md-5">
+        <div class="card-header" text-primary>{{ titulo }}</div>
+            <div class="card-body">
+
+                <div class="container">
+                    <form [formGroup]="form" (ngSubmit)="guardar()">
+
+                        <div class="form-group col-md-8">
+                            <label for="alumno">Alumno:</label>
+                            <select type="number" class="form-control" id="alumno" formControlName="Alumno">
+                            <option *ngFor="let a of alumnos" [value]="a.idAlumno">
+                                {{a.nombre}}
+                            </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="profesor">Profesor:</label>
+                            <select type="number" class="form-control" id="profesor" formControlName="Profesor">
+                            <option *ngFor="let p of profesores" [value]="p.idProfesor">
+                                {{p.nombre}}
+                            </option>
+                        </select>
+                        </div>
+                
+                        <div class="form-group col-md-8">
+                            <label for="tema">Tema:</label>
+                            <select type="number" class="form-control" id="tema" formControlName="Tema">
+                            <option *ngFor="let t of temas" [value]="t.id">
+                                {{t.nombre}}
+                            </option>
+                        </select>
+                        </div>
+
+                        <!-- Interes -->
+                        <label for="interes">Interes:</label>
+                        <div id="interes" class="form-group col-md-12">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio1" value="1" formControlName="Interes">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio2" value="2" formControlName="Interes">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio3" value="3" formControlName="Interes">
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio4" value="4" formControlName="Interes">
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio5" value="5" formControlName="Interes">
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio6" value="6" formControlName="Interes">
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio7" value="7" formControlName="Interes">
+                                <label class="form-check-label" for="inlineRadio7">7</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio8" value="8" formControlName="Interes">
+                                <label class="form-check-label" for="inlineRadio8">8</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio9" value="9" formControlName="Interes">
+                                <label class="form-check-label" for="inlineRadio9">9</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio10" value="10" formControlName="Interes">
+                                <label class="form-check-label" for="inlineRadio10">10</label>
+                            </div>
+                        </div>
+
+                        <!-- Complejidad -->
+                        <label for="complejidad">Complejidad:</label>
+                        <div id="complejidad" class="form-group col-md-12">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio1" value="1" formControlName="Complejidad">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio2" value="2" formControlName="Complejidad">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio3" value="3" formControlName="Complejidad">
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio4" value="4" formControlName="Complejidad">
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio5" value="5" formControlName="Complejidad">
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio6" value="6" formControlName="Complejidad">
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio7" value="7" formControlName="Complejidad">
+                                <label class="form-check-label" for="inlineRadio7">7</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio8" value="8" formControlName="Complejidad">
+                                <label class="form-check-label" for="inlineRadio8">8</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio9" value="9" formControlName="Complejidad">
+                                <label class="form-check-label" for="inlineRadio9">9</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio10" value="10" formControlName="Complejidad">
+                                <label class="form-check-label" for="inlineRadio10">10</label>
+                            </div>
+                        </div>
+
+                        <!-- Entendimiento -->
+                        <label for="entendimiento">Entendimiento:</label>
+                        <div id="entendimiento" class="form-group col-md-12">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio1" value="1" formControlName="Entendimiento">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio2" value="2" formControlName="Entendimiento">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio3" value="3" formControlName="Entendimiento">
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio4" value="4" formControlName="Entendimiento">
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio5" value="5" formControlName="Entendimiento">
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio6" value="6" formControlName="Entendimiento">
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio7" value="7" formControlName="Entendimiento">
+                                <label class="form-check-label" for="inlineRadio7">7</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio8" value="8" formControlName="Entendimiento">
+                                <label class="form-check-label" for="inlineRadio8">8</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio9" value="9" formControlName="Entendimiento">
+                                <label class="form-check-label" for="inlineRadio9">9</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio10" value="10" formControlName="Entendimiento">
+                                <label class="form-check-label" for="inlineRadio10">10</label>
+                            </div>
+                        </div>
+
+                        <!-- Valoracion -->
+                        <label for="valoracion">Valoracion:</label>
+                        <div id="valoracion" class="form-group col-md-12">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio1" value="1" formControlName="Valoracion">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio2" value="2" formControlName="Valoracion">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio3" value="3" formControlName="Valoracion">
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio4" value="4" formControlName="Valoracion">
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio5" value="5" formControlName="Valoracion">
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio6" value="6" formControlName="Valoracion">
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio7" value="7" formControlName="Valoracion">
+                                <label class="form-check-label" for="inlineRadio7">7</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio8" value="8" formControlName="Valoracion">
+                                <label class="form-check-label" for="inlineRadio8">8</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio9" value="9" formControlName="Valoracion">
+                                <label class="form-check-label" for="inlineRadio9">9</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"  id="inlineRadio10" value="10" formControlName="Valoracion">
+                                <label class="form-check-label" for="inlineRadio10">10</label>
+                            </div>
+                        </div>
+
+                        <div class="form-floating">
+                            <label for="textArea">Observaciones </label>
+                            <textarea formControlName="Observaciones" id="textArea" rows="4" class="form-control"></textarea>
+                          </div>
+
+                        <br>
+
+                        <button *ngIf="!puntaje else elseBlock" type="submit" class="btn btn-success mx-2"> Crear </button>
+                        <ng-template #elseBlock>
+                            <button class="btn btn-primary" type="button" (click)="abrirModalEditar()"> Confirmar </button>
+                            <button type="button" class="btn btn-outline-danger mx-2"
+                        (click)="abrirModalEliminar()"> 
+                            Eliminar
+                        </button>
+                        </ng-template>
+                    
+                        <button type="button" class="btn btn-danger mx-2"
+                        routerLink="/puntajes"> 
+                            Cancelar 
+                        </button>
+                    </form>
+                </div>
+            </div>
+    </div>
+
+
+    <div class="mx-1 my-3 col-md-6">
+        <img class="imagen-puntaje" src="../../../../assets/puntaje1.jpg" alt="">
+    </div>
+</div>
+<ngx-spinner></ngx-spinner>
